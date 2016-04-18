@@ -7,6 +7,7 @@
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
     <script language="javascript" type="text/javascript" src="flotlib/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="flotlib/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="flotlib/jquery.flot.axislabels.js"></script>
 <style>
 .flot-tick-label {
 	transform: rotate(-15deg);
@@ -23,7 +24,21 @@ $(document).ready(function recogerDatos() {
 	var timeout = 5000;
     $.post("ping.php").done(function(response, status){
     	console.log(response);
-    	$.plot($("#placeholder"), [eval(response)] );
+    	$.plot($("#placeholder"), [eval(response)], 
+    {
+        yaxis : {
+            show : true,
+            axisLabel : 'Latencia [ms]',
+            position: 'left',
+        },
+        xaxis : {
+            show : true,
+            axisLabel : 'Tiempo [Formato UNIX]',
+        }
+
+    }
+
+            );
 	});
     setTimeout(recogerDatos, timeout);
 });
