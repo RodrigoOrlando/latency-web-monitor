@@ -1,2 +1,4 @@
 # latency-web-monitor
-Monitoriacion remota, del tiempo de respuesta de un comando PING hecha desde un servidor.
+Monitorizacion remota, del tiempo de respuesta de un comando PING hecha desde un servidor.
+
+This branch works on windows.
